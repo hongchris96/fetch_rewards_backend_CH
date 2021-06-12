@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Spend, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # validations
+  describe 'validations' do
+    it {should validate_presence_of(:points_req)}
+  end
 end
