@@ -12,8 +12,9 @@ RSpec.describe User, type: :model do
     it {should validate_presence_of(:balance)}
     it {should validate_uniqueness_of(:username)}
     it "should validate balance doesn't go below zero" do
-      dummy.valid?
-      expect(dummy.errors[:balance]).to eq(["Balance cannot go below zero"])
+      negative_balance = User.new(username: "SubZero", balance: -100)
+      negative_balance.valid?
+      expect(negative_balance.errors[:balance]).to eq(["must be greater than or equal to 0"])
     end
   end
 
