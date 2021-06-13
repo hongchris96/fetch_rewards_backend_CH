@@ -8,7 +8,6 @@ RSpec.describe Transaction, type: :model do
   describe 'validations' do
     it {should validate_presence_of(:payer_id)}
     it {should validate_presence_of(:points)}
-    it {should validate_presence_of(:created_at)}
   end
 
   # associations

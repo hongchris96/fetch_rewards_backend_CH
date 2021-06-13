@@ -1,0 +1,6 @@
+<div>
+  <h1><%= @transaction.created_at %></h1>
+  <h1>Payer: <%= @transaction.payer.username%></h1>
+  <h1>Points: <%= @transaction.points%></h1>
+  <a href="<%= transactions_url %>"><-All Transactions</a>
+</div>

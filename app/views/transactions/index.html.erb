@@ -1,0 +1,14 @@
+<h1>All Transactions</h1>
+<ul>
+  <% @transactions.each do |t| %>
+    <li>
+      <a href="<%= transaction_url(t) %>">
+        <p>Date: <%= t.created_at %></p>
+        <p>Payer: <%= t.payer.username%></p>
+        <p>Points: <%= t.points %></p>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="<%= new_transaction_url %>">New Transaction-></a>
