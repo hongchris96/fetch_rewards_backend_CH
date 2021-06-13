@@ -1,1 +1,8 @@
-<h1>Index here</h1>
+<h1>All Users</h1>
+<div>
+  <% @users.each do |u| %>
+    <a href="<%= user_url(u) %>"><%= u.username %></a>
+  <% end %>
+</div>
+
+<a href="<%= new_user_url %>">New User</a>
