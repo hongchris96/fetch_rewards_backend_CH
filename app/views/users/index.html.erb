@@ -1,8 +1,10 @@
+<nav class="user-nav">
+  <a href="<%= transactions_url %>">All Transactions-></a>
+</nav>
+
 <h1>All Users</h1>
 <ul>
   <% @users.each do |u| %>
     <li><a href="<%= user_url(u) %>"><%= u.username %></a></li>
   <% end %>
 </ul>
-
-<a href="<%= transactions_url %>">All Transactions-></a>
