@@ -3,12 +3,23 @@
   <% @transactions.each do |t| %>
     <li>
       <a href="<%= transaction_url(t) %>">
-        <p>Date: <%= t.created_at %></p>
-        <p>Payer: <%= t.payer.username%></p>
-        <p>Points: <%= t.points %></p>
+        <table>
+        <tr>
+          <th>Date</th>
+          <th>Payer</th>
+          <th>Points</th>
+          <th>Remaning Balance</th>
+        </tr>
+          <td><%= t.created_at %></td>
+          <td><%= t.payer.username%></td>
+          <td><%= t.points %></td>
+          <td><%= t.remaining_balance %></td>
+        </table>
       </a>
     </li>
   <% end %>
 </ul>
 
 <a href="<%= new_transaction_url %>">New Transaction-></a>
+<br/>
+<a href="<%= users_url %>"><-All Users</a>

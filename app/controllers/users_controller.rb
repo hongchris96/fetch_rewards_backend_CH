@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(username: params[:user][:username], balance: 0)
     if @user.save
       redirect_to users_url
     else
@@ -32,6 +32,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :balance)
+    params.require(:user).permit(:username)
   end
 end

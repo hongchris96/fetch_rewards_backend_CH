@@ -8,7 +8,17 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    table {
+      margin-bottom: 10px;
+    }
+    a {
+      text-decoration: none;
+    }
+  </style>
   <body>
     <%= yield %>
   </body>
