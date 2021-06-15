@@ -102,11 +102,11 @@ then restart the server
 1. Enter `localhost:3000` in the url, which will redirect you to the users index page
 2. Click on `All Transactions` then `New Transaction`
 
-<img width="500" alt="image" src="#"><img width="500" alt="image" src="#">
+<img width="500" alt="image" src="https://github.com/hongchris96/fetch_rewards_backend_CH/blob/main/app/assets/images/step2-1.png"><img width="500" alt="image" src="https://github.com/hongchris96/fetch_rewards_backend_CH/blob/main/app/assets/images/step2-2.png">
 
 3. Input `dannon` for payer and `300` for points, Click `Create this transaction` to create the transaction and redirect back to the Transaction index page.
 
-<img width="500" alt="image" src="#"><img width="500" alt="image" src="#">
+<img width="500" alt="image" src="https://github.com/hongchris96/fetch_rewards_backend_CH/blob/main/app/assets/images/step3-1.png"><img width="500" alt="image" src="https://github.com/hongchris96/fetch_rewards_backend_CH/blob/main/app/assets/images/step3-2.png">
 
 4. Repeat the previous step for creating new transactions with exactly the following data:
   payer: `unilever` points: `200`
@@ -116,10 +116,10 @@ then restart the server
 
 5. After creating the 5 transactions, on the bottom of the transaction index page, Enter `5000` in Spend Points and click `Generate transactions`
 
-<img width="500" alt="image" src="#">
+<img width="500" alt="image" src="https://github.com/hongchris96/fetch_rewards_backend_CH/blob/main/app/assets/images/step5.png">
 
 6. Three new transactions are created according to the rules:
   * Oldest points to be spent first (oldest based on transaction timestamp, not the order they’re received)
   * No payer's points to go negative.
-  
-<img width="500" alt="image" src="#">
+
+<img width="500" alt="image" src="https://github.com/hongchris96/fetch_rewards_backend_CH/blob/main/app/assets/images/step6.png">
