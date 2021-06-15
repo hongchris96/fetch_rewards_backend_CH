@@ -109,10 +109,10 @@ then restart the server
 <img width="500" alt="image" src="https://github.com/hongchris96/fetch_rewards_backend_CH/blob/main/app/assets/images/step3-1.png"><img width="500" alt="image" src="https://github.com/hongchris96/fetch_rewards_backend_CH/blob/main/app/assets/images/step3-2.png">
 
 4. Repeat the previous step for creating new transactions with exactly the following data:
-  payer: `unilever` points: `200`
-  payer: `dannon` points: `-200`
-  payer: `miller coors` points: `10000`
-  payer: `dannon` points: `1000`
+  * payer: `unilever` points: `200`
+  * payer: `dannon` points: `-200`
+  * payer: `miller coors` points: `10000`
+  * payer: `dannon` points: `1000`
 
 5. After creating the 5 transactions, on the bottom of the transaction index page, Enter `5000` in Spend Points and click `Generate transactions`
 
