@@ -3,20 +3,14 @@ class TransactionsController < ApplicationController
     @transactions = Transaction.all
     render :index
   end
-
-  def show
-    @transaction = Transaction.find_by(id: params[:id])
-    render :show
-  end
   
   def new
     render :new
   end
 
   def create
-    @payer = User.find_by(username: params[:transaction][:payer_name])
+    @payer = User.find_by(username: params[:transaction][:payer_name].upcase)
     if @payer
-      # debugger
       delta_points = params[:transaction][:points].to_i
       if (delta_points < 0 && @payer.balance > -delta_points) || delta_points >= 0
         @payer.update(balance: @payer.balance + delta_points)
@@ -31,8 +25,15 @@ class TransactionsController < ApplicationController
         flash.now[:errors] = "User balance cannot be below zero"
       end
     else
-      flash.now[:errors] = "User not in database"
-      render :new
+      @payer = User.new(username: params[:transaction][:payer_name].upcase, balance: params[:transaction][:points].to_i)
+      @payer.save
+      @transaction = Transaction.new(payer_id: @payer.id, points: @payer.balance, remaining_balance: @payer.balance)
+      if @transaction.save
+        redirect_to transactions_url
+      else
+        flash.now[:errors] = @transaction.errors.full_messages
+        render :new
+      end
     end
   end
 

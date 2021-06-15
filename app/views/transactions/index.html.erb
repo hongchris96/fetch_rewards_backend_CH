@@ -1,25 +1,35 @@
+<nav class="transaction-nav">
+  <a href="<%= new_transaction_url %>">New Transaction-></a>
+  <a href="<%= users_url %>"><-All Users</a>
+</nav>
+
 <h1>All Transactions</h1>
 <ul>
   <% @transactions.each do |t| %>
     <li>
-      <a href="<%= transaction_url(t) %>">
-        <table>
-        <tr>
-          <th>Date</th>
-          <th>Payer</th>
-          <th>Points</th>
-          <th>Remaning Balance</th>
-        </tr>
-          <td><%= t.created_at %></td>
-          <td><%= t.payer.username%></td>
-          <td><%= t.points %></td>
-          <td><%= t.remaining_balance %></td>
-        </table>
-      </a>
+      <table>
+      <tr>
+        <th>Date</th>
+        <th>Payer</th>
+        <th>Points</th>
+        <th>Remaning Balance</th>
+      </tr>
+        <td><%= t.created_at %></td>
+        <td><%= t.payer.username%></td>
+        <td><%= t.points %></td>
+        <td><%= t.remaining_balance %></td>
+      </table>
     </li>
   <% end %>
 </ul>
 
-<a href="<%= new_transaction_url %>">New Transaction-></a>
-<br/>
-<a href="<%= users_url %>"><-All Users</a>
+<form action="<%= spends_url%>" method="post">
+  <p>
+    <label>Spend Points:
+      <input type="number" name="spend[points_req]">
+    </label>
+  </p>
+  <p>
+    <input type="submit" value="Generate transactions">
+  </p>
+</form>

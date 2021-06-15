@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users, only: [:index, :show, :create, :update, :new]
-  resources :transactions, only: [:index, :show, :create, :new]
-  resources :spends, only: [:show, :create, :new]
+  resources :transactions, only: [:index, :create, :new]
+  resources :spends, only: [:create]
 end

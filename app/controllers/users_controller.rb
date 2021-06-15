@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     render :new
   end
 
+  # don't need this route because can save user in transaction create
   def create
     @user = User.new(username: params[:user][:username], balance: 0)
     if @user.save
@@ -22,7 +23,8 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
+  
+  # don't need this route because can save user in transaction create
   def update
     @user = User.find_by(id: params[:id])
     @user.update(user_params)
